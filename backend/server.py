@@ -1,4 +1,6 @@
 from fastapi import FastAPI, APIRouter, HTTPException
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
@@ -159,3 +161,35 @@ logger = logging.getLogger(__name__)
 @app.on_event("shutdown")
 async def shutdown_db_client():
     client.close()
+
+
+# ---------------------------------------------------------------------------
+# Optional: serve the built React frontend from the same FastAPI app.
+# Used on single-dyno hosts like Heroku where the Node buildpack runs
+# `yarn build` (heroku-postbuild) and produces `frontend/build/`.
+# Has no effect during local dev when the build folder is absent.
+# ---------------------------------------------------------------------------
+FRONTEND_BUILD = ROOT_DIR.parent / "frontend" / "build"
+if FRONTEND_BUILD.exists():
+    static_dir = FRONTEND_BUILD / "static"
+    if static_dir.exists():
+        app.mount(
+            "/static",
+            StaticFiles(directory=str(static_dir)),
+            name="frontend-static",
+        )
+
+    @app.get("/{full_path:path}")
+    async def spa_fallback(full_path: str):
+        # /api/* routes are already handled by the router above.
+        if full_path.startswith("api/") or full_path == "api":
+            raise HTTPException(status_code=404, detail="Not found")
+        # Serve a real file if it exists (favicon, manifest, images, etc.)
+        candidate = FRONTEND_BUILD / full_path
+        if full_path and candidate.is_file():
+            return FileResponse(str(candidate))
+        # Fallback to React's index.html for SPA routing
+        index = FRONTEND_BUILD / "index.html"
+        if index.is_file():
+            return FileResponse(str(index))
+        raise HTTPException(status_code=404, detail="Frontend build not found")
