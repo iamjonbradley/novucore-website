@@ -1,0 +1,5 @@
+# NovuCore robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://novucore.com/sitemap.xml
