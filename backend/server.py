@@ -59,12 +59,12 @@ class InquiryOut(BaseModel):
 
 # ---------- Routes ----------
 @api_router.get("/")
-async def root():
+async def root() -> dict[str, str]:
     return {"message": "NovuCore API"}
 
 
 @api_router.post("/status", response_model=StatusCheck)
-async def create_status_check(payload: StatusCheckCreate):
+async def create_status_check(payload: StatusCheckCreate) -> StatusCheck:
     obj = StatusCheck(client_name=payload.client_name)
     doc = obj.model_dump()
     doc["timestamp"] = doc["timestamp"].isoformat()
@@ -73,27 +73,22 @@ async def create_status_check(payload: StatusCheckCreate):
 
 
 @api_router.get("/status", response_model=List[StatusCheck])
-async def get_status_checks():
+async def get_status_checks() -> List[StatusCheck]:
     rows = await db.status_checks.find().to_list(1000)
-    out = []
-    for r in rows:
-        ts = r.get("timestamp")
+    out: List[StatusCheck] = []
+    for record in rows:
+        ts = record.get("timestamp")
         if isinstance(ts, str):
             try:
-                r["timestamp"] = datetime.fromisoformat(ts)
-            except Exception:
-                r["timestamp"] = datetime.now(timezone.utc)
-        out.append(StatusCheck(**{k: v for k, v in r.items() if k != "_id"}))
+                record["timestamp"] = datetime.fromisoformat(ts)
+            except ValueError:
+                record["timestamp"] = datetime.now(timezone.utc)
+        out.append(StatusCheck(**{k: v for k, v in record.items() if k != "_id"}))
     return out
 
 
-@api_router.post("/contact", response_model=InquiryOut)
-async def create_inquiry(payload: InquiryIn):
-    inquiry_id = str(uuid.uuid4())
-    created_at = datetime.now(timezone.utc).isoformat()
-
-    # Persist first so nothing is lost even if email fails
-    doc = {
+def _build_inquiry_doc(payload: "InquiryIn", inquiry_id: str, created_at: str) -> dict:
+    return {
         "id": inquiry_id,
         "name": payload.name,
         "email": payload.email,
@@ -106,13 +101,22 @@ async def create_inquiry(payload: InquiryIn):
         "email_status": "pending",
         "email_error": None,
     }
+
+
+@api_router.post("/contact", response_model=InquiryOut)
+async def create_inquiry(payload: InquiryIn) -> InquiryOut:
+    inquiry_id: str = str(uuid.uuid4())
+    created_at: str = datetime.now(timezone.utc).isoformat()
+
+    # Persist first so nothing is lost even if email fails
     try:
-        await db.inquiries.insert_one(doc)
-    except Exception as e:
+        await db.inquiries.insert_one(
+            _build_inquiry_doc(payload, inquiry_id, created_at)
+        )
+    except Exception:
         logging.exception("Mongo insert failed")
         raise HTTPException(status_code=500, detail="Could not save inquiry.")
 
-    # Fire transactional email via Brevo
     ok, err = send_inquiry_email(
         name=payload.name,
         email=payload.email,
@@ -125,16 +129,10 @@ async def create_inquiry(payload: InquiryIn):
 
     await db.inquiries.update_one(
         {"id": inquiry_id},
-        {
-            "$set": {
-                "email_status": "sent" if ok else "failed",
-                "email_error": err,
-            }
-        },
+        {"$set": {"email_status": "sent" if ok else "failed", "email_error": err}},
     )
 
     if not ok:
-        # We still succeeded in saving — return success but include warning
         logging.warning("Inquiry %s saved but email failed: %s", inquiry_id, err)
 
     return InquiryOut(ok=True, id=inquiry_id)
@@ -159,7 +157,7 @@ logger = logging.getLogger(__name__)
 
 
 @app.on_event("shutdown")
-async def shutdown_db_client():
+async def shutdown_db_client() -> None:
     client.close()
 
 
@@ -180,7 +178,7 @@ if FRONTEND_BUILD.exists():
         )
 
     @app.get("/{full_path:path}")
-    async def spa_fallback(full_path: str):
+    async def spa_fallback(full_path: str) -> FileResponse:
         # /api/* routes are already handled by the router above.
         if full_path.startswith("api/") or full_path == "api":
             raise HTTPException(status_code=404, detail="Not found")

@@ -120,9 +120,9 @@ const HeroVisual = () => {
             </div>
           </div>
           <div className="mt-3 grid grid-cols-4 gap-1">
-            {[100, 100, 100, 100].map((v, i) => (
+            {["perf", "a11y", "best", "seo"].map((slug, i) => (
               <div
-                key={i}
+                key={slug}
                 className="h-1.5 rounded-full bg-gradient-to-r from-[#A8B5CF] to-[#1F2A48]"
                 style={{ opacity: 0.55 + i * 0.12 }}
               />

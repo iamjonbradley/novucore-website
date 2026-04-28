@@ -1,5 +1,4 @@
 import React from "react";
-import { ArrowUpRight } from "lucide-react";
 import { company, navLinks } from "../../mock";
 
 const Footer = () => {
@@ -8,8 +7,12 @@ const Footer = () => {
     <footer className="bg-white border-t border-[#E4E8F0]">
       <div className="max-w-[1320px] mx-auto px-6 lg:px-10 py-16">
         <div className="grid lg:grid-cols-12 gap-10">
-          <div className="lg:col-span-6">
-            <a href="#top" className="inline-flex items-center" aria-label={company.name}>
+          <div className="lg:col-span-8">
+            <a
+              href="#top"
+              className="inline-flex items-center"
+              aria-label={company.name}
+            >
               <img
                 src="/logo.png"
                 alt={`${company.name} logo`}
@@ -26,31 +29,13 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-4">
             <div className="font-mono-mini text-[#94A0B8] mb-4">Site</div>
             <ul className="space-y-3">
               {navLinks.map((l) => (
                 <li key={l.href}>
                   <a href={l.href} className="text-[#1F2A48] link-underline">
                     {l.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="lg:col-span-3">
-            <div className="font-mono-mini text-[#94A0B8] mb-4">Elsewhere</div>
-            <ul className="space-y-3">
-              {company.socials.map((s) => (
-                <li key={s.label}>
-                  <a
-                    href={s.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 text-[#1F2A48] link-underline"
-                  >
-                    {s.label} <ArrowUpRight className="w-3.5 h-3.5" />
                   </a>
                 </li>
               ))}
