@@ -1,7 +1,6 @@
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
 import { company, navLinks } from "../../mock";
-import Logo from "./Logo";
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -10,12 +9,14 @@ const Footer = () => {
       <div className="max-w-[1320px] mx-auto px-6 lg:px-10 py-16">
         <div className="grid lg:grid-cols-12 gap-10">
           <div className="lg:col-span-6">
-            <div className="flex items-center gap-2.5">
-              <Logo size={22} />
-              <span className="font-display text-[#1F2A48] text-[20px] tracking-[-0.02em]">
-                {company.name}
-              </span>
-            </div>
+            <a href="#top" className="inline-flex items-center" aria-label={company.name}>
+              <img
+                src="/logo.png"
+                alt={`${company.name} logo`}
+                className="h-8 lg:h-9 w-auto select-none"
+                draggable="false"
+              />
+            </a>
             <p className="mt-6 max-w-md text-[15px] leading-relaxed text-[#5B6B8C]">
               {company.pitch} A small studio shipping considered, hand-coded
               websites and web&nbsp;apps for ambitious teams worldwide.

@@ -1,6 +1,5 @@
 import React from "react";
 import { Gauge, Zap, CheckCircle2, Globe } from "lucide-react";
-import Logo from "./Logo";
 
 /**
  * Decorative hero visual — glassy code-editor mockup with floating
@@ -20,12 +19,13 @@ const HeroVisual = () => {
       />
 
       {/* Faint giant brand mark behind everything */}
-      <div
-        aria-hidden
-        className="absolute -right-10 -top-6 opacity-[0.08] pointer-events-none"
-      >
-        <Logo size={220} />
-      </div>
+      <img
+        src="/icon.png"
+        alt=""
+        aria-hidden="true"
+        className="absolute -right-12 -top-8 w-[260px] h-[260px] object-contain opacity-[0.10] pointer-events-none select-none"
+        draggable="false"
+      />
 
       {/* Main code-editor card */}
       <div className="relative rounded-2xl border border-[#E4E8F0] bg-white shadow-[0_30px_80px_-30px_rgba(31,42,72,0.30),0_8px_20px_-12px_rgba(31,42,72,0.10)] overflow-hidden">

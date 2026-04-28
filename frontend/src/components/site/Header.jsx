@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { navLinks, company } from "../../mock";
-import Logo from "./Logo";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -23,11 +22,13 @@ const Header = () => {
       }`}
     >
       <div className="max-w-[1320px] mx-auto px-6 lg:px-10 h-[72px] flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-2.5 group">
-          <Logo size={22} />
-          <span className="font-display text-[20px] leading-none text-[#1F2A48] tracking-[-0.02em]">
-            {company.name}
-          </span>
+        <a href="#top" className="flex items-center group" aria-label={company.name}>
+          <img
+            src="/logo.png"
+            alt={`${company.name} logo`}
+            className="h-7 lg:h-8 w-auto select-none"
+            draggable="false"
+          />
         </a>
 
         <nav className="hidden md:flex items-center gap-1 rounded-full border border-[#E4E8F0] bg-white/70 backdrop-blur px-1.5 py-1.5 shadow-[0_1px_0_rgba(31,42,72,0.04)]">
