@@ -10,6 +10,10 @@ import Services from "./components/site/Services";
 import Athletes from "./components/site/Athletes";
 import Bars from "./components/site/Bars";
 import LawFirms from "./components/site/LawFirms";
+import CaseStudyDavidLow from "./components/site/CaseStudyDavidLow";
+import CaseStudyKravMaga from "./components/site/CaseStudyKravMaga";
+import WorkIndex from "./components/site/WorkIndex";
+import WorkHighlights from "./components/site/WorkHighlights";
 import Process from "./components/site/Process";
 import Contact from "./components/site/Contact";
 import Footer from "./components/site/Footer";
@@ -36,6 +40,7 @@ const Home = () => (
     <Marquee />
     <About />
     <Services />
+    <WorkHighlights />
     <Process />
     <Contact />
   </>
@@ -77,6 +82,23 @@ const Shell = () => (
           element={
             <SolutionPage>
               <LawFirms />
+            </SolutionPage>
+          }
+        />
+        <Route path="/work" element={<WorkIndex />} />
+        <Route
+          path="/work/david-low-associates"
+          element={
+            <SolutionPage>
+              <CaseStudyDavidLow />
+            </SolutionPage>
+          }
+        />
+        <Route
+          path="/work/krav-maga-fort-lauderdale"
+          element={
+            <SolutionPage>
+              <CaseStudyKravMaga />
             </SolutionPage>
           }
         />

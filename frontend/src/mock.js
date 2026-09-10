@@ -16,6 +16,7 @@ export const company = {
 export const navLinks = [
   { label: "About", href: "/#about" },
   { label: "Services", href: "/#services" },
+  { label: "Work", href: "/work" },
   {
     label: "Solutions",
     href: "/solutions/athletes",
@@ -432,4 +433,38 @@ export const lawFirms = {
   promise:
     "Every asset, intake export and file removed from our devices at handover. Zero retained access unless you're on a maintenance plan.",
 };
+
+
+// ---------------------------------------------------------------------------
+// Work / Portfolio index
+// ---------------------------------------------------------------------------
+export const workProjects = [
+  {
+    slug: "david-low-associates",
+    href: "/work/david-low-associates",
+    client: "David Low & Associates, P.A.",
+    tagline: "Transforming a Florida law firm into a premium digital brand.",
+    industry: "Legal · Insurance litigation",
+    year: "2026",
+    location: "Florida",
+    services: ["Strategy", "UX/UI", "Design", "Development", "SEO"],
+    image:
+      "https://images.unsplash.com/photo-1562281302-809108fd533c?crop=entropy&cs=srgb&fm=jpg&w=1400&q=80",
+    live: "https://davidlowpa.com/",
+  },
+  {
+    slug: "krav-maga-fort-lauderdale",
+    href: "/work/krav-maga-fort-lauderdale",
+    client: "Krav Maga Worldwide™ — Fort Lauderdale",
+    tagline:
+      "Turning a training gym into a book-my-free-trial engine.",
+    industry: "Self-defense · Fitness · Training",
+    year: "2026",
+    location: "Fort Lauderdale, FL",
+    services: ["Strategy", "UX/UI", "Design", "Development", "SEO"],
+    image:
+      "https://images.pexels.com/photos/16552870/pexels-photo-16552870.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    live: "https://www.kravmagatraining.com/",
+  },
+];
 
