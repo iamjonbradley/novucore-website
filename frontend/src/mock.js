@@ -14,11 +14,31 @@ export const company = {
 };
 
 export const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Industries", href: "#athletes" },
-  { label: "Process", href: "#process" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "/#about" },
+  { label: "Services", href: "/#services" },
+  {
+    label: "Solutions",
+    href: "/solutions/athletes",
+    children: [
+      {
+        label: "Athletes",
+        blurb: "Recruiting sites for baseball players",
+        href: "/solutions/athletes",
+      },
+      {
+        label: "Bars & Bands",
+        blurb: "Live gigs, tickets & mailing lists",
+        href: "/solutions/bars-bands",
+      },
+      {
+        label: "Attorneys",
+        blurb: "Secure intake & consultations",
+        href: "/solutions/attorneys",
+      },
+    ],
+  },
+  { label: "Process", href: "/#process" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export const stats = [
