@@ -8,6 +8,8 @@ import Marquee from "./components/site/Marquee";
 import About from "./components/site/About";
 import Services from "./components/site/Services";
 import Athletes from "./components/site/Athletes";
+import Bars from "./components/site/Bars";
+import LawFirms from "./components/site/LawFirms";
 import Process from "./components/site/Process";
 import Contact from "./components/site/Contact";
 import Footer from "./components/site/Footer";
@@ -22,6 +24,8 @@ const Home = () => {
         <About />
         <Services />
         <Athletes />
+        <Bars />
+        <LawFirms />
         <Process />
         <Contact />
       </main>

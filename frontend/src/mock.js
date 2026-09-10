@@ -16,7 +16,7 @@ export const company = {
 export const navLinks = [
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
-  { label: "Athletes", href: "#athletes" },
+  { label: "Industries", href: "#athletes" },
   { label: "Process", href: "#process" },
   { label: "Contact", href: "#contact" },
 ];
@@ -240,5 +240,176 @@ export const athletes = {
   },
   promise:
     "Every photo & clip removed from our devices at handover. Zero retained access unless you're on a maintenance plan.",
+};
+
+
+// ---------------------------------------------------------------------------
+// Bars & Bands vertical
+// ---------------------------------------------------------------------------
+export const bars = {
+  eyebrow: "For venues & live acts",
+  title: "Websites that pack the room.",
+  lead:
+    "Custom sites for bars, breweries and touring bands — built to sell tickets, fill seats and grow the mailing list. Show your calendar, your menu, your sound, all in one link that works flawlessly on a phone at the bar.",
+  features: [
+    {
+      key: "calendar",
+      title: "Live gig calendar",
+      body:
+        "Every upcoming show on one clean page — filterable by venue, artist or date, with countdowns to the next set.",
+    },
+    {
+      key: "tickets",
+      title: "Ticket & RSVP",
+      body:
+        "Sell tickets on-site or push to Eventbrite / Dice / Shopify. Cover charge, guest list and door deals \u2014 all supported.",
+    },
+    {
+      key: "menu",
+      title: "Menu, taps & setlists",
+      body:
+        "Drinks, food and setlists that update themselves. Change one thing in the CMS \u2014 the site refreshes.",
+    },
+    {
+      key: "gallery",
+      title: "Photo & video gallery",
+      body:
+        "Fast-loading galleries for shots from the pit and behind-the-bar — organised by night, tour or season.",
+    },
+    {
+      key: "socials",
+      title: "Instagram, Spotify & TikTok",
+      body:
+        "One-click links plus embedded reels, tracks and stories so fans can dig in without leaving the site.",
+    },
+    {
+      key: "mailer",
+      title: "Mailing list built-in",
+      body:
+        "Grow a list of regulars and superfans. Every signup lands in Mailchimp / Klaviyo / ConvertKit automatically.",
+    },
+    {
+      key: "booking",
+      title: "Booking & press inbox",
+      body:
+        "Dedicated forms for promoters, sponsors and press — routed straight to the right inbox with press-kit downloads.",
+    },
+    {
+      key: "privacy",
+      title: "Yours at handover",
+      body:
+        "On completion we hand the site fully over and wipe every promo photo, master and file from our devices. We retain zero access unless you keep us on a maintenance plan.",
+    },
+  ],
+  outcomes: [
+    { value: "60+", label: "Shows sold out" },
+    { value: "3.2x", label: "Avg. mailing-list growth" },
+    { value: "<1 s", label: "Time to interactive" },
+  ],
+  sample: {
+    kind: "Show",
+    status: "On sale · 43 left",
+    band: "The Ledger Notes",
+    support: "with Slow Traffic",
+    venue: "The Copper Room · Nashville",
+    date: "Fri · Oct 24",
+    doors: "Doors 8pm · Sets 9pm",
+    price: "$15 adv · $20 door",
+    socials: [
+      { label: "Instagram", href: "#" },
+      { label: "Spotify", href: "#" },
+      { label: "TikTok", href: "#" },
+    ],
+  },
+  promise:
+    "Every promo photo, master and file removed from our devices at handover. Zero retained access unless you're on a maintenance plan.",
+};
+
+// ---------------------------------------------------------------------------
+// Law firms vertical
+// ---------------------------------------------------------------------------
+export const lawFirms = {
+  eyebrow: "For attorneys & firms",
+  title: "Sites that convert quiet visitors into consultations.",
+  lead:
+    "Considered, trust-first websites for solo attorneys and boutique firms. Present your practice with authority, capture consultation requests through a secure intake, and stay compliant with confidentiality expectations end-to-end.",
+  features: [
+    {
+      key: "practice",
+      title: "Practice areas",
+      body:
+        "Structured pages for every practice area — clear scope, outcomes and what to expect, ranked well by search.",
+    },
+    {
+      key: "attorneys",
+      title: "Attorney bios",
+      body:
+        "Editorial bio pages with credentials, admissions, publications and speaking. Update in the CMS in under a minute.",
+    },
+    {
+      key: "results",
+      title: "Case results & reviews",
+      body:
+        "Structured schema for verdicts, settlements and Google reviews \u2014 with the disclaimers legal-compliance requires.",
+    },
+    {
+      key: "consult",
+      title: "Consultation booking",
+      body:
+        "Prospects pick a time that works and pre-answer intake questions before the call. Syncs to your calendar.",
+    },
+    {
+      key: "intake",
+      title: "Secure intake form",
+      body:
+        "TLS-only submissions with optional conflict-check fields and file uploads. No third-party form leaks.",
+    },
+    {
+      key: "trust",
+      title: "Credentials & trust",
+      body:
+        "Bar admissions, super-lawyer badges, memberships and awards presented tastefully — never noisy.",
+    },
+    {
+      key: "content",
+      title: "Blog & thought leadership",
+      body:
+        "A quiet, elegant content system for firm announcements, case-law commentary and long-form guides.",
+    },
+    {
+      key: "privacy",
+      title: "Confidential at handover",
+      body:
+        "On completion we hand the site fully over and wipe every asset, intake export and file from our devices. We retain zero access unless you keep us on a maintenance plan.",
+    },
+  ],
+  outcomes: [
+    { value: "42%", label: "More consult requests" },
+    { value: "AA", label: "WCAG accessibility" },
+    { value: "100/100", label: "Lighthouse — SEO" },
+  ],
+  sample: {
+    firm: "Whitmore & Reyes LLP",
+    tag: "Estate planning · Trusts · Probate",
+    attorney: {
+      initials: "AW",
+      name: "Amara Whitmore",
+      role: "Partner · Estate Planning",
+      bar: "NY · CT · Bar admitted 2012",
+    },
+    intake: {
+      matter: "Estate planning",
+      timing: "This month",
+      when: "Thu · Nov 6 · 10:30 AM ET",
+    },
+    trust: [
+      "Super Lawyers · Rising Star 2024",
+      "ACTEC Fellow",
+      "AV Preeminent",
+    ],
+    footer: "Encrypted intake · No third-party form leaks",
+  },
+  promise:
+    "Every asset, intake export and file removed from our devices at handover. Zero retained access unless you're on a maintenance plan.",
 };
 
