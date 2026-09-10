@@ -16,6 +16,7 @@ export const company = {
 export const navLinks = [
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
+  { label: "Athletes", href: "#athletes" },
   { label: "Process", href: "#process" },
   { label: "Contact", href: "#contact" },
 ];
@@ -151,7 +152,93 @@ export const budgetRanges = [
 ];
 
 export const techStack = [
-  "React", "Next.js", "TypeScript", "Node.js", "Tailwind CSS",
-  "Framer Motion", "Sanity", "Shopify", "Stripe", "Postgres",
-  "Vercel", "Figma", "GraphQL", "FastAPI", "MongoDB",
+  "Laravel", "React", "Next.js", "TypeScript", "Node.js", "Tailwind CSS",
+  "Postgres", "GraphQL", "FastAPI", "MongoDB", "MySQL", "PostgreSQL"
 ];
+
+// ---------------------------------------------------------------------------
+// Recruiting / Athletes vertical
+// ---------------------------------------------------------------------------
+export const athletes = {
+  eyebrow: "For young athletes",
+  title: "Recruiting sites that get you seen.",
+  lead:
+    "Custom-coded recruiting portfolios for high-school baseball players — designed to land in a college coach's inbox and open doors. Every profile is built to be shared as a single link: stats, film, academics, character, all in under sixty seconds.",
+  features: [
+    {
+      key: "reel",
+      title: "Highlight reel first",
+      body:
+        "Your top plays front-and-center with fast, mobile-first video that coaches actually watch through.",
+    },
+    {
+      key: "stats",
+      title: "Season-by-season stats",
+      body:
+        "Batting, pitching and fielding numbers laid out cleanly — updated every season, exportable to PDF.",
+    },
+    {
+      key: "academics",
+      title: "Academic profile",
+      body:
+        "GPA, test scores, class rank and coursework. Coaches see a full student, not just a prospect.",
+    },
+    {
+      key: "pdf",
+      title: "Coach-ready one-pager",
+      body:
+        "A printable summary generated from your site — perfect to attach to camp registrations and cold emails.",
+    },
+    {
+      key: "media",
+      title: "Add your own photos & videos",
+      body:
+        "A simple built-in uploader lets players (and parents) add new photos and highlight clips any time — no code, no calls.",
+    },
+    {
+      key: "social",
+      title: "YouTube, Instagram & TikTok",
+      body:
+        "One-click links to your channels so coaches can dig deeper. Embed reels straight from your socials on your profile page.",
+    },
+    {
+      key: "contact",
+      title: "Contact form built-in",
+      body:
+        "Coaches, scouts and camp directors reach out through a simple form — every message lands in your inbox.",
+    },
+    {
+      key: "privacy",
+      title: "Yours at handover",
+      body:
+        "On completion we hand the site fully over and wipe every photo, clip and file from our devices. We retain zero access unless you keep us on a maintenance plan.",
+    },
+  ],
+  outcomes: [
+    { value: "36+", label: "Athletes placed" },
+    { value: "12", label: "D1 commitments" },
+    { value: "1 link", label: "One profile to share" },
+  ],
+  sample: {
+    name: "Jordan M.",
+    initials: "JM",
+    grad: "Class of 2027",
+    position: "RHP / OF",
+    heightWeight: "6′1″ · 185 lb",
+    stats: [
+      { label: "ERA", value: "1.84" },
+      { label: "AVG", value: ".412" },
+      { label: "GPA", value: "3.92" },
+      { label: "FB", value: "89 mph" },
+    ],
+    status: "Available · Uncommitted",
+    socials: [
+      { label: "YouTube", href: "#" },
+      { label: "Instagram", href: "#" },
+      { label: "TikTok", href: "#" },
+    ],
+  },
+  promise:
+    "Every photo & clip removed from our devices at handover. Zero retained access unless you're on a maintenance plan.",
+};
+

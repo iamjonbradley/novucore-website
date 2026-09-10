@@ -7,6 +7,7 @@ import Hero from "./components/site/Hero";
 import Marquee from "./components/site/Marquee";
 import About from "./components/site/About";
 import Services from "./components/site/Services";
+import Athletes from "./components/site/Athletes";
 import Process from "./components/site/Process";
 import Contact from "./components/site/Contact";
 import Footer from "./components/site/Footer";
@@ -20,6 +21,7 @@ const Home = () => {
         <Marquee />
         <About />
         <Services />
+        <Athletes />
         <Process />
         <Contact />
       </main>
