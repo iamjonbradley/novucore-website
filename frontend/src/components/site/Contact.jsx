@@ -49,7 +49,7 @@ const ContactIntro = () => (
       your
       <span className="relative inline-block ml-3 align-baseline">
         <span className="relative z-10 px-3 text-[#1F2A48]">project.</span>
-        <span aria-hidden className="absolute inset-0 bg-white -skew-x-6 rounded-md" />
+        <span aria-hidden className="absolute inset-0 bg-[#E4C68A] -skew-x-6 rounded-md" />
       </span>
     </h2>
     <p className="mt-6 text-[#C5CDE0] leading-relaxed max-w-md">

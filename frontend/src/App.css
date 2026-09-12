@@ -57,6 +57,14 @@ body {
   text-transform: uppercase;
 }
 
+/* Colored eyebrow dash utility — rotates through the triad */
+.eyebrow-dash { display: inline-block; width: 1.5rem; height: 1px; margin-right: 0.75rem; vertical-align: middle; }
+.eyebrow-dash.a { background: var(--nv-amber); }
+.eyebrow-dash.s { background: var(--nv-sage); }
+.eyebrow-dash.t { background: var(--nv-terra); }
+.eyebrow-dash.n { background: var(--nv-ink); }
+.eyebrow-dash.p { background: var(--nv-pale); }
+
 /* Hairline */
 .hairline { height: 1px; background: var(--nv-line); }
 

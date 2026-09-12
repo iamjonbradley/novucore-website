@@ -30,7 +30,7 @@ const Hero = () => {
         {/* Top meta */}
         <div className="flex items-center justify-between mb-10 lg:mb-14">
           <div className="inline-flex items-center gap-2.5 rounded-full border border-[#E4E8F0] bg-white/80 backdrop-blur px-3 py-1.5 shadow-[0_1px_0_rgba(31,42,72,0.04)]">
-            <span className="block w-1.5 h-1.5 rounded-full bg-[#1F2A48] dot-pulse" />
+            <span className="block w-1.5 h-1.5 rounded-full bg-[#0F6E4A] dot-pulse" />
             <span className="font-mono-mini text-[#5B6B8C]">
               Available — booking Q3 / Q4
             </span>

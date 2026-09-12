@@ -4,6 +4,7 @@ import { techStack, company } from "../../mock";
 
 const Marquee = () => {
   const items = [...techStack, ...techStack];
+  const dotColors = ["#A56A0F", "#0F6E4A", "#B4451F", "#1F2A48"];
   return (
     <section className="relative overflow-hidden">
       {/* Thin navy accent strip above the band */}
@@ -39,7 +40,10 @@ const Marquee = () => {
                 key={`${t}-${i}`}
                 className="inline-flex items-center gap-3 px-7 font-mono-mini text-[#7C5A3A]"
               >
-                <span className="w-1.5 h-1.5 rounded-full bg-[#1F2A48]" />
+                <span
+                  className="w-1.5 h-1.5 rounded-full"
+                  style={{ background: dotColors[i % dotColors.length] }}
+                />
                 {t}
               </span>
             ))}
