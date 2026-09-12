@@ -5,9 +5,9 @@ import { pillars, company } from "../../mock";
 const icons = { focus: Target, balance: Scale, evolution: Repeat };
 
 const iconStyles = {
-  focus: { bg: "#FBF1DE", border: "#EED8AE", color: "#A56A0F" },
-  balance: { bg: "#DDECE1", border: "#B7D5C1", color: "#0F6E4A" },
-  evolution: { bg: "#FADBC8", border: "#F1B79B", color: "#B4451F" },
+  focus: { bg: "#FFE4B0", border: "#F1CB74", color: "#A56A0F" },
+  balance: { bg: "#C7ECD0", border: "#8FD1A4", color: "#0F6E4A" },
+  evolution: { bg: "#FBC29E", border: "#F19871", color: "#B4451F" },
 };
 
 const About = () => {

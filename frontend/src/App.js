@@ -14,6 +14,7 @@ import CaseStudyDavidLow from "./components/site/CaseStudyDavidLow";
 import CaseStudyKravMaga from "./components/site/CaseStudyKravMaga";
 import WorkIndex from "./components/site/WorkIndex";
 import WorkHighlights from "./components/site/WorkHighlights";
+import ServicePage from "./components/site/ServicePage";
 import Process from "./components/site/Process";
 import Contact from "./components/site/Contact";
 import Footer from "./components/site/Footer";
@@ -86,6 +87,14 @@ const Shell = () => (
           }
         />
         <Route path="/work" element={<WorkIndex />} />
+        <Route
+          path="/services/:slug"
+          element={
+            <SolutionPage>
+              <ServicePage />
+            </SolutionPage>
+          }
+        />
         <Route
           path="/work/david-low-associates"
           element={

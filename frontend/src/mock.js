@@ -15,7 +15,32 @@ export const company = {
 
 export const navLinks = [
   { label: "About", href: "/#about" },
-  { label: "Services", href: "/#services" },
+  {
+    label: "Services",
+    href: "/#services",
+    children: [
+      {
+        label: "Marketing Websites",
+        blurb: "Hand-coded sites that convert",
+        href: "/services/marketing-websites",
+      },
+      {
+        label: "Web Applications",
+        blurb: "React, dashboards, SaaS MVPs",
+        href: "/services/web-applications",
+      },
+      {
+        label: "E-commerce",
+        blurb: "Headless stores that scale",
+        href: "/services/ecommerce",
+      },
+      {
+        label: "Ongoing Care",
+        blurb: "Retainers & maintenance",
+        href: "/services/ongoing-care",
+      },
+    ],
+  },
   { label: "Work", href: "/work" },
   {
     label: "Solutions",
@@ -467,4 +492,145 @@ export const workProjects = [
     live: "https://www.kravmagatraining.com/",
   },
 ];
+
+
+// ---------------------------------------------------------------------------
+// Full service pages
+// ---------------------------------------------------------------------------
+const commonProcess = [
+  { n: "01", t: "Discover", b: "A working session to align on goals, audience and scope." },
+  { n: "02", t: "Design", b: "Wireframes to high-fidelity Figma — reviewed before code." },
+  { n: "03", t: "Build", b: "Hand-written code, weekly preview URLs, no surprises." },
+  { n: "04", t: "Launch", b: "Ship, hand over, document and train — with care." },
+];
+
+export const servicePagesMap = {
+  "marketing-websites": {
+    slug: "marketing-websites",
+    number: "01",
+    eyebrow: "Service · 01",
+    accent: "#A56A0F",
+    tint: "#FED4B1",
+    title: "Marketing websites",
+    tagline: "Hand-coded sites that convert.",
+    lead:
+      "Bespoke, editorial marketing sites for founders, studios and modern brands — built to load instantly, rank well and turn visitors into customers.",
+    included: [
+      { t: "Editorial design", b: "Custom type, motion and layout tailored to your brand — not a template." },
+      { t: "CMS of your choice", b: "Sanity, Contentful, Payload or hand-rolled — you edit content, not code." },
+      { t: "SEO foundations", b: "Semantic HTML, structured data, sitemap, robots, analytics wired." },
+      { t: "Blazing performance", b: "Sub-second loads, 95+ Lighthouse scores by default." },
+      { t: "Analytics ready", b: "GA4 / Plausible / Fathom set up with events for the metrics you care about." },
+      { t: "A/B ready", b: "Component variants and experiment scaffolding for post-launch iteration." },
+    ],
+    outcomes: [
+      { v: "6–8 wks", l: "Typical timeline" },
+      { v: "$8k+", l: "Starting investment" },
+      { v: "100/100", l: "Target Lighthouse" },
+    ],
+    process: commonProcess,
+    faqs: [
+      { q: "Do I own everything?", a: "Yes. Code, design files, content — all handed over on completion. We wipe project assets from our devices unless you're on a maintenance plan." },
+      { q: "Can my team edit content?", a: "Absolutely. Every site ships with a CMS your team can update in minutes — no dev needed." },
+      { q: "Hosting?", a: "We ship to Vercel, Netlify or your own infra. We'll help you pick the right home." },
+    ],
+  },
+  "web-applications": {
+    slug: "web-applications",
+    number: "02",
+    eyebrow: "Service · 02",
+    accent: "#0F6E4A",
+    tint: "#E6F4E1",
+    title: "Web applications",
+    tagline: "Custom apps on modern stacks.",
+    lead:
+      "Dashboards, portals, internal tools and SaaS MVPs — engineered with type-safe APIs, real auth, and a UI your users won't want to leave.",
+    included: [
+      { t: "React / Next.js front-end", b: "Modern, accessible, mobile-first UI powered by best-in-class libraries." },
+      { t: "Type-safe backend", b: "FastAPI, Node or edge functions — schema-first with Pydantic / Zod / tRPC." },
+      { t: "Auth, roles & billing", b: "Clerk, Auth0, Stripe, RBAC — production-grade from day one." },
+      { t: "Real database", b: "Postgres or MongoDB with migrations, backups and observability." },
+      { t: "CI / CD", b: "GitHub Actions, preview environments, automated tests." },
+      { t: "Design system", b: "shadcn/ui or bespoke — a reusable component library your team can grow." },
+    ],
+    outcomes: [
+      { v: "10–16 wks", l: "Typical timeline" },
+      { v: "$25k+", l: "Starting investment" },
+      { v: "0 tech debt", l: "Ship, don't limp" },
+    ],
+    process: commonProcess,
+    faqs: [
+      { q: "Can you take over an existing codebase?", a: "Often, yes. We audit first, then propose a plan — no blind refactors." },
+      { q: "Do you do mobile apps too?", a: "React Native and PWAs, yes. Native iOS/Android — case-by-case." },
+      { q: "How do you handle handover?", a: "Full docs, runbooks, video walkthroughs and a 30-day post-launch retainer are standard." },
+    ],
+  },
+  "ecommerce": {
+    slug: "ecommerce",
+    number: "03",
+    eyebrow: "Service · 03",
+    accent: "#B4451F",
+    tint: "#FED4B1",
+    title: "E-commerce",
+    tagline: "Headless storefronts that scale.",
+    lead:
+      "Editorial storefronts paired with reliable checkout — Shopify Hydrogen, headless Stripe or bespoke — with product-page craft your customers can feel.",
+    included: [
+      { t: "Headless architecture", b: "Shopify Hydrogen, Commerce.js or bespoke — no template lock-in." },
+      { t: "Beautiful product pages", b: "Editorial layouts, live inventory, instant search and rich media." },
+      { t: "Cart & checkout craft", b: "Fast, mobile-first checkout with Apple Pay, Google Pay and Link." },
+      { t: "Stripe / Shop Pay", b: "Reliable payments, subscriptions and refunds — set up correctly." },
+      { t: "Inventory & fulfilment", b: "Integrations with ShipBob, ShipStation, Klaviyo, Gorgias and more." },
+      { t: "SEO & merchandising", b: "Collection pages, structured data, product schema and A/B-ready." },
+    ],
+    outcomes: [
+      { v: "8–14 wks", l: "Typical timeline" },
+      { v: "$18k+", l: "Starting investment" },
+      { v: "+22%", l: "Avg. conversion lift target" },
+    ],
+    process: commonProcess,
+    faqs: [
+      { q: "Do you migrate from Shopify / WooCommerce?", a: "Yes — data, redirects, SEO and inventory all handled with a launch plan." },
+      { q: "What about subscriptions?", a: "Stripe Billing, Recharge or Shopify Subscriptions — we'll recommend based on your model." },
+      { q: "Global tax?", a: "Stripe Tax, TaxJar or Avalara — built in at checkout." },
+    ],
+  },
+  "ongoing-care": {
+    slug: "ongoing-care",
+    number: "04",
+    eyebrow: "Service · 04",
+    accent: "#1F2A48",
+    tint: "#DCE3F0",
+    title: "Ongoing care",
+    tagline: "A senior developer on call.",
+    lead:
+      "Monthly retainers for teams who want a dedicated developer on standby — fixes, features, performance and accessibility audits, without the drama.",
+    included: [
+      { t: "Priority response", b: "Same-day acknowledgement, dedicated Slack channel, monthly touch-points." },
+      { t: "Continuous improvements", b: "Small features, copy, imagery and design tweaks each month." },
+      { t: "Performance audits", b: "Lighthouse, Core Web Vitals and real-user-monitoring quarterly." },
+      { t: "Accessibility audits", b: "WCAG audits with prioritised fix plans and manual QA." },
+      { t: "Security patches", b: "Dependencies, headers, CSP and CVE monitoring stay current." },
+      { t: "Uptime & backups", b: "Monitoring, alerting and rehearsed backup/restore." },
+    ],
+    outcomes: [
+      { v: "Monthly", l: "Rolling engagement" },
+      { v: "$1.2k+/mo", l: "Starting retainer" },
+      { v: "SLA", l: "Clear response times" },
+    ],
+    process: [
+      { n: "01", t: "Audit", b: "We inspect the site — performance, a11y, security, SEO." },
+      { n: "02", t: "Roadmap", b: "A shared backlog of improvements ranked by impact." },
+      { n: "03", t: "Ship", b: "Small releases each month against agreed priorities." },
+      { n: "04", t: "Review", b: "Quarterly check-in — measure, adjust, plan the next 90 days." },
+    ],
+    faqs: [
+      { q: "Do I need a retainer forever?", a: "No — retainers are month-to-month. Pause or cancel with 30 days' notice." },
+      { q: "What if the site wasn't built by you?", a: "That's fine — we start with a full audit and go from there." },
+      { q: "Can we upgrade to a full project?", a: "Yes — retainer hours can roll into a scoped project when you're ready." },
+    ],
+  },
+};
+
+export const servicePages = Object.values(servicePagesMap);
 

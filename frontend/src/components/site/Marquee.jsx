@@ -52,11 +52,11 @@ const Marquee = () => {
         {/* edge fades */}
         <div
           className="pointer-events-none absolute inset-y-0 left-0 w-24"
-          style={{ background: "linear-gradient(90deg, #FBEAD3 0%, transparent 100%)" }}
+          style={{ background: "linear-gradient(90deg, #FED4B1 0%, transparent 100%)" }}
         />
         <div
           className="pointer-events-none absolute inset-y-0 right-0 w-24"
-          style={{ background: "linear-gradient(270deg, #ECE2F0 0%, transparent 100%)" }}
+          style={{ background: "linear-gradient(270deg, #E9C8DE 0%, transparent 100%)" }}
         />
       </div>
     </section>

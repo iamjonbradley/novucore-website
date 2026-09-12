@@ -1,8 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { ArrowUpRight, Check } from "lucide-react";
 import { services } from "../../mock";
 
 const numberColors = ["#A56A0F", "#0F6E4A", "#B4451F", "#1F2A48"];
+const slugMap = {
+  "marketing-sites": "marketing-websites",
+  "web-apps": "web-applications",
+  "ecommerce": "ecommerce",
+  "care": "ongoing-care",
+};
 
 const Services = () => {
   return (
@@ -28,9 +35,11 @@ const Services = () => {
 
         <div className="grid md:grid-cols-2 gap-6">
           {services.map((s, idx) => (
-            <article
+            <Link
+              to={`/services/${slugMap[s.id] || s.id}`}
               key={s.id}
-              className="group relative bg-white border border-[#E4E8F0] rounded-2xl p-8 lg:p-10 hover:border-[#A8B5CF] hover:shadow-[0_24px_60px_-30px_rgba(31,42,72,0.25)] transition-all duration-500"
+              className="group relative bg-white border border-[#E4E8F0] rounded-2xl p-8 lg:p-10 hover:border-[#A8B5CF] hover:shadow-[0_24px_60px_-30px_rgba(31,42,72,0.25)] transition-all duration-500 block"
+              style={{ borderLeft: `4px solid ${numberColors[idx % numberColors.length]}` }}
             >
               <div className="flex items-start justify-between mb-8">
                 <span
@@ -62,7 +71,7 @@ const Services = () => {
                   </li>
                 ))}
               </ul>
-            </article>
+            </Link>
           ))}
         </div>
       </div>

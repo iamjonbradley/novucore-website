@@ -25,9 +25,10 @@
   --nv-terra-2:   #F1CDB6;
   --nv-sage:      #0F6E4A;   /* deep emerald sage — 6.7:1 on white */
   --nv-sage-2:    #C6DBCE;
-  --nv-peach:     #FBEAD3;
-  --nv-mist:      #E7E9F7;
-  --nv-sage-soft: #E4EEE6;
+  --nv-peach:     #FED4B1;   /* vivid warm coral cream */
+  --nv-mist:      #D9DFF7;   /* saturated lavender-slate */
+  --nv-sage-soft: #DCEFDE;   /* vibrant mint */
+  --nv-plum:      #F0D0E3;   /* soft magenta */
 }
 
 html, body, #root { background: var(--nv-bg); }
@@ -124,12 +125,12 @@ body {
   animation: nv-spin-slow 28s linear infinite;
 }
 
-/* Warm peach band for marquee */
+/* Warm peach band for marquee (vivid) */
 .peach-band {
   background:
-    radial-gradient(50% 100% at 0% 50%, rgba(255,210,166,0.55) 0%, transparent 70%),
-    radial-gradient(50% 100% at 100% 50%, rgba(206,184,232,0.45) 0%, transparent 70%),
-    linear-gradient(90deg, #FBEAD3 0%, #F6E2D6 50%, #ECE2F0 100%);
+    radial-gradient(50% 100% at 0% 50%, rgba(255,175,110,0.55) 0%, transparent 70%),
+    radial-gradient(50% 100% at 100% 50%, rgba(214,150,210,0.45) 0%, transparent 70%),
+    linear-gradient(90deg, #FED4B1 0%, #FBC29E 50%, #E9C8DE 100%);
 }
 
 /* Subtle dot pattern */
