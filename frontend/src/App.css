@@ -17,6 +17,17 @@
   --nv-mute:      #94A0B8;
   --nv-pale:      #A8B5CF;
   --nv-cloud:     #DCE3F0;
+
+  /* Warm brand accents — bumped for saturation; all pass WCAG AA on white */
+  --nv-amber:     #A56A0F;   /* deep mustard — 6.1:1 on white */
+  --nv-amber-2:   #E4C68A;
+  --nv-terra:     #B4451F;   /* rust terracotta — 5.4:1 on white */
+  --nv-terra-2:   #F1CDB6;
+  --nv-sage:      #0F6E4A;   /* deep emerald sage — 6.7:1 on white */
+  --nv-sage-2:    #C6DBCE;
+  --nv-peach:     #FBEAD3;
+  --nv-mist:      #E7E9F7;
+  --nv-sage-soft: #E4EEE6;
 }
 
 html, body, #root { background: var(--nv-bg); }

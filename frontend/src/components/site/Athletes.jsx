@@ -154,7 +154,7 @@ const Athletes = () => {
             </span>
             <h2 className="mt-4 font-display text-[40px] lg:text-[64px] leading-[1.02] tracking-[-0.03em] text-[#1F2A48]">
               {title.split("get you seen.")[0]}
-              <span className="text-[#5B6B8C]">get you seen.</span>
+              <span className="text-[#A56A0F]">get you seen.</span>
             </h2>
             <p className="mt-6 text-[17px] lg:text-[18px] leading-relaxed text-[#5B6B8C] max-w-xl">
               {lead}

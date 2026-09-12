@@ -56,7 +56,7 @@ const Hero = () => {
                   className="absolute inset-0 bg-[#1F2A48] -skew-x-6 rounded-md"
                 />
               </span>{" "}
-              <span className="text-[#5B6B8C]">ship.</span>
+              <span className="text-[#A56A0F]">ship.</span>
             </h1>
 
             <p className="mt-7 lg:mt-8 text-[16px] lg:text-[18px] leading-relaxed text-[#5B6B8C] max-w-xl">

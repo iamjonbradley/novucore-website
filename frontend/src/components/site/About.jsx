@@ -4,6 +4,12 @@ import { pillars, company } from "../../mock";
 
 const icons = { focus: Target, balance: Scale, evolution: Repeat };
 
+const iconStyles = {
+  focus: { bg: "#FBF1DE", border: "#EED8AE", color: "#A56A0F" },
+  balance: { bg: "#DDECE1", border: "#B7D5C1", color: "#0F6E4A" },
+  evolution: { bg: "#FADBC8", border: "#F1B79B", color: "#B4451F" },
+};
+
 const About = () => {
   return (
     <section id="about" className="relative py-24 lg:py-36 bg-white">
@@ -17,7 +23,7 @@ const About = () => {
             <h2 className="font-display text-[40px] lg:text-[64px] leading-[1.02] tracking-[-0.03em] text-[#1F2A48]">
               Soft. Modern.
               <br />
-              <span className="text-[#5B6B8C]">Timeless.</span>
+              <span className="text-[#A56A0F]">Timeless.</span>
             </h2>
             <p className="mt-6 text-[16px] lg:text-[17px] leading-relaxed text-[#5B6B8C] max-w-md">
               {company.name} is a studio for founders and product teams who care
@@ -39,12 +45,16 @@ const About = () => {
             <div className="mt-12 grid sm:grid-cols-3 gap-px bg-[#E4E8F0] border border-[#E4E8F0] rounded-2xl overflow-hidden">
               {pillars.map((p) => {
                 const Icon = icons[p.key];
+                const s = iconStyles[p.key] || { bg: "#F4F6FA", border: "#E4E8F0", color: "#1F2A48" };
                 return (
                   <div
                     key={p.key}
                     className="bg-white p-7 hover:bg-[#F4F6FA] transition-colors"
                   >
-                    <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#F4F6FA] border border-[#E4E8F0] text-[#1F2A48]">
+                    <span
+                      className="inline-flex items-center justify-center w-10 h-10 rounded-full border"
+                      style={{ background: s.bg, borderColor: s.border, color: s.color }}
+                    >
                       <Icon className="w-4 h-4" />
                     </span>
                     <h3 className="mt-5 font-display text-2xl text-[#1F2A48]">

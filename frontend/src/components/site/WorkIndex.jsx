@@ -45,7 +45,7 @@ const WorkIndex = () => {
             <Eyebrow>Our work</Eyebrow>
             <h1 className="mt-4 font-display text-[44px] sm:text-[68px] lg:text-[96px] leading-[0.96] tracking-[-0.04em] text-[#1F2A48]">
               Selected
-              <span className="text-[#5B6B8C]"> case studies.</span>
+              <span className="text-[#A56A0F]"> case studies.</span>
             </h1>
           </div>
           <div className="lg:col-span-4">

@@ -2,6 +2,8 @@ import React from "react";
 import { ArrowUpRight, Check } from "lucide-react";
 import { services } from "../../mock";
 
+const numberColors = ["#A56A0F", "#0F6E4A", "#B4451F", "#1F2A48"];
+
 const Services = () => {
   return (
     <section id="services" className="relative py-24 lg:py-36 bg-[#F4F6FA]">
@@ -15,7 +17,7 @@ const Services = () => {
             <h2 className="mt-4 font-display text-[40px] lg:text-[64px] leading-[1.02] tracking-[-0.03em] text-[#1F2A48]">
               What we make
               <br />
-              <span className="text-[#5B6B8C]">together.</span>
+              <span className="text-[#A56A0F]">together.</span>
             </h2>
           </div>
           <p className="text-[#5B6B8C] text-[16px] leading-relaxed max-w-md">
@@ -25,13 +27,18 @@ const Services = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {services.map((s) => (
+          {services.map((s, idx) => (
             <article
               key={s.id}
               className="group relative bg-white border border-[#E4E8F0] rounded-2xl p-8 lg:p-10 hover:border-[#A8B5CF] hover:shadow-[0_24px_60px_-30px_rgba(31,42,72,0.25)] transition-all duration-500"
             >
               <div className="flex items-start justify-between mb-8">
-                <span className="font-mono-mini text-[#94A0B8]">{s.number}</span>
+                <span
+                  className="font-mono-mini font-medium"
+                  style={{ color: numberColors[idx % numberColors.length] }}
+                >
+                  {s.number}
+                </span>
                 <span className="w-10 h-10 rounded-full border border-[#E4E8F0] grid place-items-center text-[#1F2A48] group-hover:bg-[#1F2A48] group-hover:text-white group-hover:border-[#1F2A48] transition-colors">
                   <ArrowUpRight className="w-4 h-4" />
                 </span>

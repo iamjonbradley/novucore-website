@@ -15,7 +15,7 @@ const WorkHighlights = () => {
             </span>
             <h2 className="mt-4 font-display text-[40px] lg:text-[64px] leading-[1.02] tracking-[-0.03em] text-[#1F2A48]">
               Recent projects
-              <span className="text-[#5B6B8C]"> we&apos;re proud of.</span>
+              <span className="text-[#A56A0F]"> we&apos;re proud of.</span>
             </h2>
           </div>
           <Link

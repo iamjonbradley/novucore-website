@@ -160,7 +160,7 @@ const Bars = () => {
             </span>
             <h2 className="mt-4 font-display text-[40px] lg:text-[64px] leading-[1.02] tracking-[-0.03em] text-[#1F2A48]">
               {title.split("pack the room.")[0]}
-              <span className="text-[#5B6B8C]">pack the room.</span>
+              <span className="text-[#B4451F]">pack the room.</span>
             </h2>
             <p className="mt-6 text-[17px] lg:text-[18px] leading-relaxed text-[#5B6B8C] max-w-xl">
               {lead}
